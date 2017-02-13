@@ -1,0 +1,46 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+header{
+    background-color: red;
+    height: 110px;
+}
+nav{
+    background-color: GRAY;
+}
+aside{
+
+    height: 500px;
+    background-color: green;
+    display: inline-block;
+}
+footer{
+    height: 200px;
+    background-color: GRAY;
+}
+.main-content{
+    background-color: GRAY;
+    display: inline-block;
+    height: 500px;
+    widows: 100%;
+}
+.login{
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 300px;
+}
+.logo, .buscador, .botones, .botones li, .sociales li{
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+}
+.botones li{
+    float: right;
+}
