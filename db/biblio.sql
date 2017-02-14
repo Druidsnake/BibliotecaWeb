@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-02-2017 a las 03:19:59
+-- Tiempo de generación: 14-02-2017 a las 18:16:37
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -42,8 +42,7 @@ CREATE TABLE `libros` (
 INSERT INTO `libros` (`isbn`, `titulo`, `autor`, `genero`, `editorial`, `sinopsis`) VALUES
 (1651512, 'Divina Comedia', 'Dante Alighieri', 'no se', 'tampoco', 'aggggggg tmr pe'),
 (18151521, 'Warcraft Cronicas', 'Blizzard', 'Generox', 'Panini', 'World of Warcraft configura un universo que ha crecido a lo largo de los últimos veinte años. Lo que empezó como un juego relativamente sencillo se ha convertido en un mundo vibrante y perdurable de pleno derecho. Un mundo que recibe las visitas diarias de millones de jugadores del mundo entero.'),
-(41984151, 'Poema de Gilgamesh', 'Anónimo', 'Epico', 'Ninguno', 'La historia de gilgamesh'),
-(116516165, 'wachiturro una historia de cono', 'Anonimo', 'Agg', 'dsdasdasdasd', 'adasdasdasdasdasdasdasdasdasdasdasd');
+(41984151, 'Poema de Gilgamesh', 'Anónimo', 'Epico', 'Ninguno', 'La historia de gilgamesh');
 
 -- --------------------------------------------------------
 

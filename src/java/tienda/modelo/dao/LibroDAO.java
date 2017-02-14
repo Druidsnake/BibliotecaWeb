@@ -56,26 +56,55 @@ public class LibroDAO {
         return libros;
     }
 
+   public static Libro obtenerLibro(int isbn) {
+        String sql = "select*from libros where isbn=?";
+        Connection cn = Conexion.abrir();
+        Libro lib = null;
+        //prepareStatemnet para ejecutar sql
+        PreparedStatement stm;
+        try {
+            stm = cn.prepareStatement(sql);
+            //asignar valor a los parametros ? ?
+            stm.setInt(1, isbn);
+            //ejecuar stm
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                lib = new Libro();
+                lib.setIsbn(rs.getInt(1));
+                lib.setTitulo(rs.getString(2));
+                lib.setAutor(rs.getString(3));
+                lib.setGenero(rs.getString(4));
+                lib.setEditorial(rs.getString(5));
+                lib.setSinopsis(rs.getString(6));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return lib;
+    }
+
     //-----------------------------
     public static ArrayList<Libro> listar() {
-        ArrayList<Libro> empleados = new ArrayList<>();
-        Libro emp;
+        ArrayList<Libro> libros = new ArrayList<>();
+        Libro lib;
         PreparedStatement ps;
         ResultSet rs;
-        String sql = "select*from empleado";
+        String sql = "select*from libros";
         Connection cn = Conexion.abrir();
         try {
             ps = cn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                emp = new Libro();
-      //          emp.setIdempleado(rs.getInt(1));
-        //        emp.setNombre(rs.getString(2));
-         //       emp.setPaterno(rs.getString(3));
-          //      emp.setMaterno(rs.getString(4));
-           //     emp.setCargo(rs.getString(5));
+                lib = new Libro();
+                lib.setIsbn(rs.getInt(1));
+                lib.setTitulo(rs.getString(2));
+                lib.setAutor(rs.getString(3));
+                lib.setGenero(rs.getString(4));
+                lib.setEditorial(rs.getString(5));
+                lib.setSinopsis(rs.getString(6));
                 //agregar arreglo
-                empleados.add(emp);
+                libros.add(lib);
             }
             cn.close();
             ps.close();
@@ -83,21 +112,23 @@ public class LibroDAO {
         } catch (SQLException ex) {
 
         }
-        return empleados;
+        return libros;
 
     }
 
     //------------
-    public static void insertar(Libro emp) {
-        String sql = "insert into empleado(nombre,apepaterno,apematerno,cargo)values(?,?,?,?)";
+    public static void insertar(Libro lib) {
+        String sql = "insert into libros(isbn,titulo,autor,genero,editorial,sinopsis)values(?,?,?,?,?,?)";
         PreparedStatement ps;
         Connection cn = Conexion.abrir();
         try {
             ps = cn.prepareStatement(sql);
-  //          ps.setString(1, emp.getNombre());
-  //          ps.setString(2, emp.getPaterno());
-  //          ps.setString(3, emp.getMaterno());
-  //          ps.setString(4, emp.getCargo());
+            ps.setInt(1,lib.getIsbn());
+            ps.setString(2, lib.getTitulo());
+            ps.setString(3, lib.getAutor());
+            ps.setString(4, lib.getGenero());
+            ps.setString(5, lib.getEditorial());
+            ps.setString(6, lib.getSinopsis());            
             ps.executeUpdate();
             cn.close();
             ps.close();
@@ -109,17 +140,18 @@ public class LibroDAO {
 
     //-------------------------
 
-    public static void editar(Libro emp) {
-        String sql = "update empleado set nombre=?,apepaterno=?,apematerno=?,cargo=? where idempleado=?";
+    public static void editar(Libro lib) {
+        String sql = "update libros set titulo=?,autor=?,genero=?,editorial=?,sinopsis=? where isbn=?";
         PreparedStatement ps;
         Connection cn = Conexion.abrir();
         try {
             ps = cn.prepareStatement(sql);
- //           ps.setString(1, emp.getNombre());
- //           ps.setString(2, emp.getPaterno());
- //           ps.setString(3, emp.getMaterno());
- //           ps.setString(4, emp.getCargo());
- //           ps.setInt(5, emp.getIdempleado());
+            ps.setString(1, lib.getTitulo());
+            ps.setString(2, lib.getAutor());
+            ps.setString(3, lib.getGenero());
+            ps.setString(4, lib.getEditorial());
+            ps.setString(5, lib.getSinopsis());
+            ps.setInt(6, lib.getIsbn());
             ps.executeUpdate();
             cn.close();
             ps.close();
@@ -131,13 +163,13 @@ public class LibroDAO {
 
     //---------------------
 
-    public static void eliminar(int cod) {
-        String sql = "delete from empleado where idempleado=?";
+    public static void eliminar(int isbn) {
+        String sql = "delete from libros where isbn=?";
         PreparedStatement ps;
         Connection cn = Conexion.abrir();
         try {
             ps = cn.prepareStatement(sql);
-            ps.setInt(1, cod);
+            ps.setInt(1, isbn);
             ps.executeUpdate();
             cn.close();
             ps.close();

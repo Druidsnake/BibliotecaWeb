@@ -8,11 +8,9 @@
 <%@page import="tienda.modelo.bean.Usuario"%>
 <!DOCTYPE html>
 <html>
-    <%
-            //obtener valor de la variable de sesion usu
-            //Usuario usuario=(Usuario)request.getSession().getAttribute("usu");
-            Usuario usuario = (Usuario) request.getSession().getAttribute("u");
-        %>
+        <%
+        Usuario usuario = (Usuario) request.getSession().getAttribute("u");       
+    %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -30,6 +28,7 @@
             <ul class="botones col-md-4">
                 <li><a href="#"><%=usuario.getNom1()%></a></li>
                 <li><a href="CerrarSesion">Cerrar Sesion</a></li>
+                <li><a href="listarLibros">Administrar</a></li>
 
             </ul>
             <ul class="sociales col-md-2">

@@ -18,7 +18,6 @@ nav{
 aside{
 
     height: 500px;
-    background-color: green;
     display: inline-block;
 }
 footer{
@@ -26,9 +25,8 @@ footer{
     background-color: GRAY;
 }
 .main-content{
-    background-color: GRAY;
     display: inline-block;
-    height: 500px;
+    height: 1000px;
     widows: 100%;
 }
 .login{
@@ -43,4 +41,7 @@ footer{
 }
 .botones li{
     float: right;
+}
+.actualizarlibro div{
+    display: block;
 }

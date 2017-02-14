@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tienda.modelo.bean.Libro;
 import tienda.modelo.bean.Usuario;
 import tienda.modelo.dao.LibroDAO;
 
@@ -19,7 +20,7 @@ import tienda.modelo.dao.LibroDAO;
  *
  * @author Alumno
  */
-@WebServlet(name = "ServletLibro", urlPatterns = {"/ServletLibro","/obtenerLibros"})
+@WebServlet(name = "ServletLibro", urlPatterns = {"/ServletLibro","/obtenerLibros","/listarLibros","/nuevoLibro","/editarLibro","/grabarLibro","/actualizarLibro","/eliminarLibro"})
 public class ServletLibro extends HttpServlet {
 
     /**
@@ -41,6 +42,52 @@ public class ServletLibro extends HttpServlet {
             String clave = request.getParameter("input_libro");
             request.setAttribute("listarLib", LibroDAO.obtener(clave));
             request.getRequestDispatcher("WEB-INF/Libros/LibrosEncontrados.jsp").forward(request, response);
+        }
+        if(path.equals("/listarLibros")){
+            request.setAttribute("listarLib", LibroDAO.listar());
+            request.getRequestDispatcher("WEB-INF/Libros/Libros.jsp").forward(request,response);
+        }
+        if(path.equals("/nuevoLibro")){
+            //valor que viene por la url
+            //int isbn = Integer.parseInt(request.getParameter("isbn"));
+            request.setAttribute("libro", new Libro());
+            request.getRequestDispatcher("WEB-INF/Libros/FormNuevo.jsp").forward(request, response);
+        }
+        if (path.equals("/editarLibro")) {
+            //valor que viene por la url
+            int isbn = Integer.parseInt(request.getParameter("isbn"));
+            request.setAttribute("libro", LibroDAO.obtenerLibro(isbn));
+            request.getRequestDispatcher("WEB-INF/Libros/FormEditar.jsp").forward(request, response);
+        }
+        if(path.equals("/grabarLibro")){
+            
+            Libro lib=new Libro();
+            lib.setIsbn(Integer.parseInt(request.getParameter("txtisbn")));
+            lib.setTitulo(request.getParameter("txttitulo"));
+            lib.setAutor(request.getParameter("txtautor"));
+            lib.setGenero(request.getParameter("txtgenero"));
+            lib.setEditorial(request.getParameter("txteditorial"));
+            lib.setSinopsis(request.getParameter("txtsinopsis"));            
+            LibroDAO.insertar(lib);
+            response.sendRedirect("listarLibros");
+        }
+        if(path.equals("/actualizarLibro")){
+         
+            Libro lib=new Libro();
+            lib.setIsbn(Integer.parseInt(request.getParameter("txtisbn")));
+            lib.setTitulo(request.getParameter("txttitulo"));
+            lib.setAutor(request.getParameter("txtautor"));
+            lib.setGenero(request.getParameter("txtgenero"));
+            lib.setEditorial(request.getParameter("txteditorial"));
+            lib.setSinopsis(request.getParameter("txtsinopsis"));            
+            LibroDAO.editar(lib);
+            response.sendRedirect("listarLibros");
+        }
+        if(path.equals("/eliminarLibro")){
+            
+            int isbn=(Integer.parseInt(request.getParameter("isbn")));
+            LibroDAO.eliminar(isbn);
+            response.sendRedirect("listarLibros");
         }
     }
 //metodos personalizados

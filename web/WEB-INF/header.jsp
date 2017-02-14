@@ -31,6 +31,7 @@
                 <li><a href="Registrarse">Registrarse</a></li>
                 <li><a href="Login">Logear</a></li>
 
+
             </ul>
             <ul class="sociales col-md-2">
                 <li><a href="#"></a>face</li>
