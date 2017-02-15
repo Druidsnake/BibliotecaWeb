@@ -13,7 +13,7 @@
         <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="public/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
+        <title>Bernardo se la come</title>
     </head>
     <body>
         <div class=".container-fluid">
