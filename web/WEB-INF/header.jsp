@@ -17,7 +17,7 @@
 
             <a class="logo col-md-2" href="index.jsp"><img src="<%=request.getContextPath()%>/imagen/ui/logo.png" width="100"></a>
             <div class="buscador col-md-4">
-                <form class="" action="obtenerLibros" method="post">
+                <form class="" action="ServletNoLogeado" method="post">
                     <input type="text" name="input_libro" value="" placeholder="Busca un libro">
                     <button type="submit" name="Buscar"></button>
                 </form>

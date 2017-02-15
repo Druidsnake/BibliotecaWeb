@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tienda.modelo.dao.LibroDAO;
 
 /**
  *
@@ -27,7 +28,9 @@ public class ServletNoLogeado extends HttpServlet {
         
         String path=request.getServletPath();
         if(path.equals("/ServletNoLogeado")){
-            
+            String clave = request.getParameter("input_libro");
+            request.setAttribute("listarLib", LibroDAO.obtener(clave));
+            request.getRequestDispatcher("indexSinLog.jsp").forward(request, response);
         }
     }
 

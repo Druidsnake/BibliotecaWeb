@@ -34,7 +34,35 @@
                 <%@include file="WEB-INF/aside.jsp" %>
             </aside>
             <section class="main-content col-md-10">
-                
+                <div><h4>(*)Para poder reservar un libro, necesitas estar Logeado</h4></div>
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <thead>
+                        <tr>
+                            <th>ISBN</th>
+                            <th class="mdl-data-table__cell--non-numeric">Titulo</th>
+                            <th class="mdl-data-table__cell--non-numeric">Autor</th>
+                            <th class="mdl-data-table__cell--non-numeric">Genero</th>
+                            <th class="mdl-data-table__cell--non-numeric">Editorial</th>
+                            
+                        </tr>
+                    </thead>
+
+                    <%
+                       ArrayList<Libro> libros = (ArrayList<Libro>) request.getAttribute("listarLib");
+
+                       for (Libro x : libros) {%>
+                    <tbody>
+                        <tr>
+                            <td><%=x.getIsbn()%></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%=x.getTitulo()%></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%=x.getAutor()%></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%=x.getGenero()%></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%=x.getEditorial()%></td>                           
+                        </tr>
+                    </tbody>
+
+                    <% }%>
+            </table>
             </section>
 
         </div>
