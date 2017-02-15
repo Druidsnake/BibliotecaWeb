@@ -12,7 +12,7 @@ import tienda.modelo.dao.LibroDAO;
 import tienda.modelo.dao.ReservaDAO;
 
 
-@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi"})
+@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi","/eliminarReserva_admi"})
 public class ServletAdmi extends HttpServlet {
 
    
@@ -31,7 +31,12 @@ public class ServletAdmi extends HttpServlet {
         }
         if(path.equals("/listarReservas_admi")){
             request.setAttribute("listarReservas", ReservaDAO.listarTodasReservas());
-            request.getRequestDispatcher("WEB-INF/Admin/Libros_adm.jsp").forward(request,response);
+            request.getRequestDispatcher("WEB-INF/Admin/Reservas_adm.jsp").forward(request,response);
+        }
+        if(path.equals("/eliminarReserva_admi")){
+           int idReserva= Integer.parseInt(request.getParameter("idreserva"));
+           ReservaDAO.eliminar(idReserva);
+           response.sendRedirect("listarReservas_admi");
         }
     }
 

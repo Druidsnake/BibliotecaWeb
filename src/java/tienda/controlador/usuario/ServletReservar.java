@@ -23,7 +23,7 @@ import tienda.modelo.dao.ReservaDAO;
  *
  * @author Alumno
  */
-@WebServlet(name = "ServletReservar", urlPatterns = {"/ServletReservar","/Reservar","/listarReservados"})
+@WebServlet(name = "ServletReservar", urlPatterns = {"/ServletReservar","/Reservar","/listarReservados","/eliminarReserva"})
 public class ServletReservar extends HttpServlet {
 
     /**

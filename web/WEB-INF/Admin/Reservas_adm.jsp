@@ -1,9 +1,11 @@
+<%-- 
+    Document   : Reservas_adm
+    Created on : 15/02/2017, 02:15:25 AM
+    Author     : Peter
+--%>
+
 <%@page import="tienda.modelo.bean.Reserva"%>
-<%@page import="java.util.*" session="true" %>
 <%@page import="java.util.ArrayList"%>
-<%@page import="tienda.modelo.bean.Empleado"%>
-<%@page import="tienda.modelo.bean.Usuario"%>
-<%@page import="tienda.modelo.bean.Libro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -48,42 +50,38 @@
             <aside class="col-md-2">
                 <%@include file="../aside3.jsp" %>
             </aside>
-            <section class="main-content col-md-10">
-                <h1>Libros</h1>
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp mdl-js-data-table">
+    <section class="main-content col-md-10"> 
+        
+        <h1>Reservas</h1>
+    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp mdl-js-data-table">
             <thead>
                 <tr>
-                    <th>ISBN</th>
-                    <th class="mdl-data-table__cell--non-numeric">TITULO</th>
-                    <th class="mdl-data-table__cell--non-numeric">AUTOR</th>
-                    <th class="mdl-data-table__cell--non-numeric">GENERO</th>
-                    <th class="mdl-data-table__cell--non-numeric">EDITORIAL</th>
-                    <th class="mdl-data-table__cell--non-numeric"> <a href="nuevoLibro">Nuevo</a></th>
+                    <th>ID</th>
+                    <th class="mdl-data-table__cell--non-numeric">USUARIO</th>
+                    <th class="mdl-data-table__cell--non-numeric">ISBN</th>
+                    <th class="mdl-data-table__cell--non-numeric">FECHA INICIAL</th>
+                    <th class="mdl-data-table__cell--non-numeric">FECHA FINAL</th>                    
                     <th></th>
                 </tr>
             </thead>
             <%
-               ArrayList<Libro> libros = (ArrayList<Libro>) request.getAttribute("listarLib");
-               for (Libro x : libros) {%>
+               ArrayList<Reserva> Reservas = (ArrayList<Reserva>) request.getAttribute("listarReservas");
+               for (Reserva x : Reservas) {%>
 
             <tbody>
                 <tr>
                     <td><%=x.getIsbn()%></td>
-                    <td class="mdl-data-table__cell--non-numeric"><%=x.getTitulo()%></td>
-                    <td class="mdl-data-table__cell--non-numeric"><%=x.getAutor()%></td>
-                    <td class="mdl-data-table__cell--non-numeric"><%=x.getGenero()%></td>
-                    <td class="mdl-data-table__cell--non-numeric"><%=x.getEditorial()%></td>
-                    <td class="mdl-data-table__cell--non-numeric"><a href="editarLibro?isbn=<%=x.getIsbn()%>">Editar</a></td>
-                    <td class="mdl-data-table__cell--non-numeric"><a href="eliminarLibro?isbn=<%=x.getIsbn()%>" onclick="return confirmar();" >Eliminar</a></td>
+                    <td class="mdl-data-table__cell--non-numeric"><%=x.getIdreserva()%></td>
+                    <td class="mdl-data-table__cell--non-numeric"><%=x.getUsuario()%></td>
+                    <td class="mdl-data-table__cell--non-numeric"><%=x.getIsbn()%></td>
+                    <td class="mdl-data-table__cell--non-numeric"><%=x.getFecha_desde()%></td>
+                    <td class="mdl-data-table__cell--non-numeric"><%=x.getFecha_hasta()%></td>
+                    <td class="mdl-data-table__cell--non-numeric"><a href="eliminarReserva_admi?idreserva=<%=x.getIdreserva()%>" onclick="return confirmar();" >Eliminar</a></td>
 
                 </tr>
             </tbody>
             <% }%>
         </table>
+        
             </section>
-        </div>
-        <div class=".container-fluid">
-            <footer class="col-md-12"><%@include file="../footer.jsp" %></footer>
-        </div>
-    </body>
 </html>

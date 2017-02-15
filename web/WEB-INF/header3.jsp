@@ -27,12 +27,7 @@
     <body>
         
         <div class="container">
-            <a class="logo col-md-2" href="index.jsp">Logo</a>
-            <div class="buscador col-md-4">
-                <form class="" action="obtenerLibros" method="post">
-                    <input type="text" name="input_libro" value="" placeholder="Busca un libro">
-                    <button type="submit" name="Buscar"></button>
-                </form>
+            <a class="logo col-md-2" href="index.jsp">Logo</a>            
             </div>
             <ul class="botones col-md-4">
                 <li><a href="#"><%=usuario.getNom1()%></a></li>
