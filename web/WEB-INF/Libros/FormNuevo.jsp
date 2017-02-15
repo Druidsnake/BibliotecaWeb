@@ -10,8 +10,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="public/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="public/mdl/material.css" rel="stylesheet" type="text/css"/>
+        <script src="public/mdl/material.js" type="text/javascript"></script>
+        <link href="public/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <script src="public/materialize/js/materialize.min.js" type="text/javascript"></script>
+        <link href="public/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
-        <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>        
+        <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>
         <script>
             if (history.forward(1)) {
                 location.replace(history.forward(1))
@@ -35,38 +40,37 @@
             </aside>
             <section class="main-content col-md-10">
                 <h1>Nuevo Libro</h1>
-        <form action="grabarLibro" method="post">
-            <table>
-                <tr>
-                    <td>Isbn</td>
-                    <td><input name="txtisbn" type="text" ></td>
-                </tr>
-                <tr>
-                    <td>Titulo</td>
-                    <td><input name="txttitulo" type="text" ></td>
-                </tr>
-                 <tr>
-                    <td>Autor</td>
-                    <td><input name="txtautor" type="text" ></td>
-                </tr>
-                 <tr>
-                    <td>Genero</td>
-                    <td><input name="txtgenero" type="text" ></td>
-                </tr>
-                 <tr>
-                    <td>Editorial</td>
-                    <td><input name="txteditorial" type="text" ></td>
-                </tr>
-                <tr>
-                    <td>Sinopsis</td>
-                    <td><input name="txtsinopsis" type="text"></td>
-                </tr>
-                 <tr>
-                    <td></td>
-                    <td><input value="Grabar" type="submit"></td>
-                </tr>
-            </table>
-        </form>
+                <form action="grabarLibro" method="post">
+
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <input class="mdl-textfield__input" name="txtisbn" type="text" >
+                        <label class="mdl-textfield__label">Isbn</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <input class="mdl-textfield__input" name="txttitulo" type="text" >
+                        <label class="mdl-textfield__label">Titulo</label>
+                    </div>
+                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                         <input class="mdl-textfield__input" name="txtautor" type="text" >
+                        <label class="mdl-textfield__label">Autor</label>
+                    </div>
+                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                         <input class="mdl-textfield__input" name="txtgenero" type="text" >
+                        <label class="mdl-textfield__label">Genero</label>
+                    </div>
+                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                         <input class="mdl-textfield__input" name="txteditorial" type="text" >
+                        <label class="mdl-textfield__label">Editorial</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <textarea class="mdl-textfield__input" type="text" rows= "3" name="txtsinopsis"></textarea>
+                        <label class="mdl-textfield__label">Sinopsis</label>
+                    </div>
+                     <div>
+                         <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" type="submit" name="button">Grabar</button>
+                    </div>
+
+                </form>
             </section>
         </div>
         <div class=".container-fluid">

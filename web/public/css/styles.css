@@ -8,12 +8,14 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+body{
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
 header{
-    background-color: red;
-    height: 110px;
+    height: 62px;
 }
 nav{
-    background-color: GRAY;
+
 }
 aside{
 
@@ -21,13 +23,11 @@ aside{
     display: inline-block;
 }
 footer{
-    height: 200px;
-    background-color: GRAY;
+
 }
 .main-content{
     display: inline-block;
-    height: 1000px;
-    widows: 100%;
+
 }
 .login{
     margin: 0 auto;
@@ -42,6 +42,7 @@ footer{
 .botones li{
     float: right;
 }
-.actualizarlibro div{
+.d-block{
     display: block;
 }
+@import url("font.css") screen;
