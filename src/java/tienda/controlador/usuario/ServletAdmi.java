@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import tienda.modelo.dao.LibroDAO;
+import tienda.modelo.dao.ReservaDAO;
 
 
-@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi"})
+@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi"})
 public class ServletAdmi extends HttpServlet {
 
    
@@ -22,6 +24,14 @@ public class ServletAdmi extends HttpServlet {
         
         if(path.equals("/ServletAdmi")){
             request.getRequestDispatcher("WEB-INF/Usuario/UsuAdmi.jsp").forward(request, response);
+        }
+        if(path.equals("/listarLibros_admi")){
+            request.setAttribute("listarLib", LibroDAO.listar());
+            request.getRequestDispatcher("WEB-INF/Admin/Libros_adm.jsp").forward(request,response);
+        }
+        if(path.equals("/listarReservas_admi")){
+            request.setAttribute("listarReservas", ReservaDAO.listarTodasReservas());
+            request.getRequestDispatcher("WEB-INF/Admin/Libros_adm.jsp").forward(request,response);
         }
     }
 

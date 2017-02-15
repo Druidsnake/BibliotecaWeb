@@ -57,6 +57,11 @@ public class ServletReservar extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/Usuario/MisReservados.jsp").forward(request, response);
 
         }
+        if(path.equals("/eliminarReserva")){
+           int idReserva= Integer.parseInt(request.getParameter("idreserva"));
+           ReservaDAO.eliminar(idReserva);
+           response.sendRedirect("listarReservados");
+        }
     }
 //metodos personalizados
 

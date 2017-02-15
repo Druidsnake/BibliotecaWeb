@@ -96,6 +96,7 @@ public class ServletUsuario extends HttpServlet {
          //  request.getSession().setAttribute("emp",EmpleadoDAO.obtenerEmpleado(usuario.getIdempleado()) );
            //ir a princiapl.jsp
            request.getRequestDispatcher("WEB-INF/index2.jsp").forward(request, response);
+           request.getRequestDispatcher("WEB-INF/UsuAdmi.jsp").forward(request, response);
        }else{
            request.setAttribute("msg", "Usuario y/o password incorrecto...!");
            //ir a login

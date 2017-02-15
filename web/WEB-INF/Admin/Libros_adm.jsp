@@ -1,3 +1,4 @@
+<%@page import="tienda.modelo.bean.Reserva"%>
 <%@page import="java.util.*" session="true" %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="tienda.modelo.bean.Empleado"%>
@@ -26,7 +27,7 @@
     <body>
         <div class=".container-fluid">
             <header class="col-md-12">
-                <%@include file="../header2.jsp" %>
+                <%@include file="../header3.jsp" %>
             </header>
             <%
             if (usuario.getNivel()!=2) {
@@ -45,7 +46,7 @@
         </div>
         <div class="container">
             <aside class="col-md-2">
-                <%@include file="../aside2.jsp" %>
+                <%@include file="../aside3.jsp" %>
             </aside>
             <section class="main-content col-md-10">
                 <h1>Libros</h1>
@@ -57,7 +58,7 @@
                     <th class="mdl-data-table__cell--non-numeric">AUTOR</th>
                     <th class="mdl-data-table__cell--non-numeric">GENERO</th>
                     <th class="mdl-data-table__cell--non-numeric">EDITORIAL</th>
-                    <th class="mdl-data-table__cell--non-numeric"> <!-- esta opc solo para adm<a href="nuevoLibro">Nuevo</a>--></th>
+                    <th class="mdl-data-table__cell--non-numeric"> <a href="nuevoLibro">Nuevo</a></th>
                     <th></th>
                 </tr>
             </thead>
@@ -72,13 +73,14 @@
                     <td class="mdl-data-table__cell--non-numeric"><%=x.getAutor()%></td>
                     <td class="mdl-data-table__cell--non-numeric"><%=x.getGenero()%></td>
                     <td class="mdl-data-table__cell--non-numeric"><%=x.getEditorial()%></td>
-                    <!-- esta opc solo para adm<td class="mdl-data-table__cell--non-numeric"><a href="editarLibro?isbn=<%//=x.getIsbn()%>">Editar</a></td>-->
-                    <!-- esta opc solo para adm<td class="mdl-data-table__cell--non-numeric"><a href="eliminarLibro?isbn=<%//=x.getIsbn()%>" onclick="return confirmar();" >Eliminar</a></td>-->
+                    <td class="mdl-data-table__cell--non-numeric"><a href="editarLibro?isbn=<%=x.getIsbn()%>">Editar</a></td>
+                    <td class="mdl-data-table__cell--non-numeric"><a href="eliminarLibro?isbn=<%=x.getIsbn()%>" onclick="return confirmar();" >Eliminar</a></td>
 
                 </tr>
             </tbody>
             <% }%>
-        </table>
+        </table>        
+        
             </section>
         </div>
         <div class=".container-fluid">

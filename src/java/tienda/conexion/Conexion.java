@@ -3,7 +3,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 public class Conexion {
 
-    static String url = "jdbc:mysql://localhost/biblio";
+    static String url = "jdbc:mysql://localhost/roa";
     static String usuario = "root";
     static String Password = "root";
 
