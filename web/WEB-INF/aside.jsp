@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <ul>
+            <li>fsdfsdf</li>
+            <li>fsdfsdf</li>
+            <li>fsdfsdf</li>
+            <li>fsdfsdf</li>
+            <li>fsdfsdf</li>
+            <li>fsdfsdf</li>
+        </ul>
     </body>
 </html>
