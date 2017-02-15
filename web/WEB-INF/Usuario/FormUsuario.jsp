@@ -35,7 +35,7 @@
                 <form action="registrarUsuario" method="post">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
                         <input class="mdl-textfield__input" name="mail" type="email" class="form-control">
-                        <label class="mdl-textfield__label">Email address</label>
+                        <label class="mdl-textfield__label">Email</label>
                     </div>
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
                         <input class="mdl-textfield__input" name="pass1" type="password" class="form-control">

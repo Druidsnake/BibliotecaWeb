@@ -1,5 +1,8 @@
 
 
+<%@page import="java.sql.Date"%>
+<%@page import="tienda.modelo.bean.Reserva"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,8 +27,11 @@
             <aside class="col-md-2">
                 <%@include file="../aside3.jsp" %>
             </aside>
+            
             <section class="main-content col-md-10">
-
+                
+               
+               
             </section>
 
         </div>
