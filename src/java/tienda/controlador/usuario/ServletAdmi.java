@@ -12,7 +12,7 @@ import tienda.modelo.dao.LibroDAO;
 import tienda.modelo.dao.ReservaDAO;
 
 
-@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi","/eliminarReserva_admi"})
+@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi","/eliminarReserva_admi","/ultimaReserva"})
 public class ServletAdmi extends HttpServlet {
 
    
@@ -37,6 +37,10 @@ public class ServletAdmi extends HttpServlet {
            int idReserva= Integer.parseInt(request.getParameter("idreserva"));
            ReservaDAO.eliminar(idReserva);
            response.sendRedirect("listarReservas_admi");
+        }
+        if(path.equals("/ultimaReserva")){
+            request.setAttribute("ultima",ReservaDAO.ultimaReserva());
+            request.getRequestDispatcher("WEB-INF/Usuario/UsuAdmi.jsp");
         }
     }
 

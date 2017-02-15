@@ -186,7 +186,7 @@ public class ReservaDAO {
     
     //--------------------ultima reserva
     
-    public static String ultimoRegistro(){
+    public static String ultimaReserva(){
         
         String fecha="";
         String sql="select max(fecha_desde) from reservas";
