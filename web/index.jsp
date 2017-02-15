@@ -17,10 +17,13 @@
     </head>
     <body>
         <div class=".container-fluid">
-            <header  class="navbar navbar-toggleable-md navbar-dark bg-primary">
+            <header  class="navbar fixed-top navbar-toggleable-md navbar-dark bg-primary">
                 <%@include file="WEB-INF/header.jsp" %>
             </header>
-            <nav class="col-md-12">
+            <div class="slider .container-fluid">
+                <%@include file="WEB-INF/slider.jsp" %>
+            </div>
+            <nav class=".container-fluid">
                 <%@include file="WEB-INF/navbar.jsp" %>
             </nav>
         </div>
@@ -33,13 +36,14 @@
             </section>
 
         </div>
-        <div class=".container-fluid">
-            <footer class="col-md-12"><%@include file="WEB-INF/footer.jsp" %></footer>
-        </div>
+
+            <footer class=".container-fluid page-footer blue center-on-small-only"><%@include file="WEB-INF/footer.jsp" %></footer>
+
         <script src="public/MDB Free/js/tether.min.js" type="text/javascript"></script>
         <script src="public/bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="public/mdl/material.min.js" type="text/javascript"></script>
         <script src="public/materialize/js/materialize.min.js" type="text/javascript"></script>
         <script src="public/MDB Free/js/mdb.min.js" type="text/javascript"></script>
+        <script src="public/js/main.js" type="text/javascript"></script>
     </body>
 </html>

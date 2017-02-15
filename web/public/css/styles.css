@@ -12,10 +12,10 @@ body{
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 header{
-    height: 110px;
+    height: 62px;
 }
 nav{
-    background-color: GRAY;
+
 }
 aside{
 
@@ -23,13 +23,11 @@ aside{
     display: inline-block;
 }
 footer{
-    height: 200px;
-    background-color: GRAY;
+
 }
 .main-content{
     display: inline-block;
-    height: 1000px;
-    widows: 100%;
+
 }
 .login{
     margin: 0 auto;
