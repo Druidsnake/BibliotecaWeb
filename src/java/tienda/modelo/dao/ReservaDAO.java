@@ -183,5 +183,24 @@ public class ReservaDAO {
         return listaReserva;
 
     }
+    
+    //--------------------ultima reserva
+    
+    public static String ultimoRegistro(){
+        
+        String fecha="";
+        String sql="select max(fecha_desde) from reservas";
+        Connection cn= Conexion.abrir();
+        try {
+            PreparedStatement ps= cn.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           fecha=rs.toString(); 
+            
+        } catch (SQLException ex) {
+        }
+        
+        
+        return fecha;
+    }
 
 }
