@@ -140,7 +140,7 @@ public class ReservaDAO {
     //---------------------
 
     public static void eliminar(int cod) {
-        String sql = "delete from empleado where idempleado=?";
+        String sql = "delete from reservas where idreserva=?";
         PreparedStatement ps;
         Connection cn = Conexion.abrir();
         try {
@@ -152,6 +152,35 @@ public class ReservaDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ReservaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+    }
+    public static ArrayList<Reserva> listarTodasReservas() {
+        ArrayList<Reserva> listaReserva = new ArrayList<>();
+        Reserva res;
+        PreparedStatement ps;
+        ResultSet rs;
+        String sql = "select*from reservas";
+        Connection cn = Conexion.abrir();
+        try {
+            ps = cn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                res = new Reserva();
+                res.setIdreserva(rs.getInt(1));
+                res.setUsuario(rs.getString(2));
+                res.setIsbn(rs.getInt(3));
+                res.setFecha_desde(rs.getString(4));
+                res.setFecha_hasta(rs.getString(5));                
+                //agregar arreglo
+                listaReserva.add(res);
+            }
+            cn.close();
+            ps.close();
+            rs.close();
+        } catch (SQLException ex) {
+
+        }
+        return listaReserva;
 
     }
 
