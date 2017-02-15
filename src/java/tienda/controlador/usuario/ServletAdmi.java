@@ -21,7 +21,7 @@ public class ServletAdmi extends HttpServlet {
         String path=request.getServletPath();
         
         if(path.equals("/ServletAdmi")){
-            response.sendRedirect("WEB-INF/Usuario/UsuAdmi.jsp");
+            request.getRequestDispatcher("WEB-INF/Usuario/UsuAdmi.jsp").forward(request, response);
         }
     }
 

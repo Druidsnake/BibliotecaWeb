@@ -1,8 +1,4 @@
-<%-- 
-    Document   : UsuAdmi
-    Created on : 14/02/2017, 08:40:43 PM
-    Author     : Peter
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
