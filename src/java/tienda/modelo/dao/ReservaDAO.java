@@ -67,22 +67,22 @@ public class ReservaDAO {
         ResultSet rs;
         String sql = "SELECT L.titulo,L.autor,R.idreserva,R.usuario,R.isbn,R.fecha_desde,R.fecha_hasta FROM libros L,reservas R where R.usuario=? and L.isbn=R.isbn";
         Connection cn = Conexion.abrir();
-        Reserva emp= null;
+        Reserva res= null;
         try {
             ps = cn.prepareStatement(sql);
             ps.setString(1, clave);
             rs = ps.executeQuery();
             while (rs.next()) {
-                emp = new Reserva();
-                emp.setTitulo(rs.getString(1));
-                emp.setAutor(rs.getString(2));
-                emp.setIdreserva(rs.getInt(3));
-                emp.setUsuario(rs.getString(4));
-                emp.setIsbn(rs.getInt(5));
-                emp.setFecha_desde(rs.getString(6));
-                emp.setFecha_hasta(rs.getString(7));
+                res = new Reserva();
+                res.setTitulo(rs.getString(1));
+                res.setAutor(rs.getString(2));
+                res.setIdreserva(rs.getInt(3));
+                res.setUsuario(rs.getString(4));
+                res.setIsbn(rs.getInt(5));
+                res.setFecha_desde(rs.getString(6));
+                res.setFecha_hasta(rs.getString(7));
                 //agregar arreglo
-                reservas.add(emp);
+                reservas.add(res);
                 
             }
             cn.close();
