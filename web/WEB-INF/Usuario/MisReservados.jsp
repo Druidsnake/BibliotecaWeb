@@ -64,7 +64,7 @@
                         <td><%=x.getFecha_desde()%></td>
                         <td><%=x.getFecha_hasta()%></td>
 
-                        <td><a href="eliminarReserva?idreserva=<%=x.getIdreserva()%>&usuario=<%=usuario.getMail()%>">Eliminar</a></td>
+                        <td><a href="eliminarReserva?idreserva=<%=x.getIdreserva()%>">Eliminar</a></td>
 
 
 
