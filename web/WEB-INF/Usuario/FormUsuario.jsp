@@ -5,6 +5,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="public/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="public/mdl/material.css" rel="stylesheet" type="text/css"/>
+        <script src="public/mdl/material.js" type="text/javascript"></script>
+        <link href="public/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <script src="public/materialize/js/materialize.min.js" type="text/javascript"></script>
+        <link href="public/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
         <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>
     </head>
@@ -28,18 +33,20 @@
                 <h1>Nuevo Usuario</h1>
 
                 <form action="registrarUsuario" method="post">
-                    <div class="form-group">
-                        <label>Email address</label>
-                        <input name="mail" type="email" class="form-control" placeholder="Email">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <input class="mdl-textfield__input" name="mail" type="email" class="form-control">
+                        <label class="mdl-textfield__label">Email address</label>
                     </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input name="pass1" type="password" class="form-control" placeholder="Password">
-                        <label>Confirmar Password</label>
-                        <input name="pass2" type="password" class="form-control" placeholder="Confirmar Password">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <input class="mdl-textfield__input" name="pass1" type="password" class="form-control">
+                        <label class="mdl-textfield__label">Contraseña</label>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
+                        <input class="mdl-textfield__input" name="pass2" type="password" class="form-control">
+                        <label class="mdl-textfield__label">Confirmar Contraseña</label>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Registrar</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" type="submit" class="btn btn-default">Registrar</button>
                 </form>
 
             </section>
