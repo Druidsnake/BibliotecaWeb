@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package tienda.controlador.usuario;
 
 import java.io.IOException;
@@ -9,36 +13,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import tienda.modelo.dao.LibroDAO;
-import tienda.modelo.dao.ReservaDAO;
 
+/**
+ *
+ * @author Peter
+ */
+@WebServlet(name = "ServletNoLogeado", urlPatterns = {"/ServletNoLogeado"})
+public class ServletNoLogeado extends HttpServlet {
 
-@WebServlet(name = "ServletAdmi", urlPatterns = {"/ServletAdmi","/listarLibros_admi","/listarReservas_admi","/eliminarReserva_admi"})
-public class ServletAdmi extends HttpServlet {
-
-   
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
         String path=request.getServletPath();
-        
-        if(path.equals("/ServletAdmi")){
-            request.getRequestDispatcher("WEB-INF/Usuario/UsuAdmi.jsp").forward(request, response);
+        if(path.equals("/ServletNoLogeado")){
+            String clave = request.getParameter("input_libro");
+            request.setAttribute("listarLib", LibroDAO.obtener(clave));
+            request.getRequestDispatcher("indexSinLog.jsp").forward(request, response);
         }
-        if(path.equals("/listarLibros_admi")){
-            request.setAttribute("listarLib", LibroDAO.listar());
-            request.getRequestDispatcher("WEB-INF/Admin/Libros_adm.jsp").forward(request,response);
-        }
-        if(path.equals("/listarReservas_admi")){
-            request.setAttribute("listarReservas", ReservaDAO.listarTodasReservas());
-            request.getRequestDispatcher("WEB-INF/Admin/Reservas_adm.jsp").forward(request,response);
-        }
-        if(path.equals("/eliminarReserva_admi")){
-           int idReserva= Integer.parseInt(request.getParameter("idreserva"));
-           ReservaDAO.eliminar(idReserva);
-           response.sendRedirect("listarReservas_admi");
-        }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

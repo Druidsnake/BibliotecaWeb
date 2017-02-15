@@ -14,25 +14,27 @@
         if (usuario.getNivel()==2) {
                nivel=2;
             }
-        
-            
-        
-        
+
+
+
+
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
+
     <body>
-        
+
         <div class="container">
-            <a class="logo col-md-2" href="index.jsp">Logo</a>            
+            <a class="logo col-md-2" href="index.jsp">Logo</a>
             </div>
             <ul class="botones col-md-4">
                 <li><a href="#"><%=usuario.getNom1()%></a></li>
                 <li><a href="CerrarSesion">Cerrar Sesion</a></li>
-               <%// <li id="admin" class="hidden"><a href="ServletAdmi">Administrar</a></li>%>
+
+               <li id="admin" class="hidden"><a href="ServletAdmi">Administrar</a></li>
+
 
             </ul>
             <ul class="sociales col-md-2">
