@@ -9,14 +9,23 @@
 <!DOCTYPE html>
 <html>
         <%
-        Usuario usuario = (Usuario) request.getSession().getAttribute("u");       
+        Usuario usuario = (Usuario) request.getSession().getAttribute("u");
+        Integer nivel=1;
+        if (usuario.getNivel()==2) {
+               nivel=2;
+            }
+        
+            
+        
+        
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
     <body>
-
+        
         <div class="container">
             <a class="logo col-md-2" href="index.jsp">Logo</a>
             <div class="buscador col-md-4">
@@ -28,7 +37,7 @@
             <ul class="botones col-md-4">
                 <li><a href="#"><%=usuario.getNom1()%></a></li>
                 <li><a href="CerrarSesion">Cerrar Sesion</a></li>
-                <li><a href="listarLibros">Administrar</a></li>
+                <li id="admin" class="hidden"><a href="listarLibros">Administrar</a></li>
 
             </ul>
             <ul class="sociales col-md-2">
@@ -38,6 +47,12 @@
             </ul>
         </div>
 
-
+        <script>
+            $(document).ready(function() {
+                if (<%=nivel%>===2) {
+                    $("#admin").removeClass("hidden");
+                }
+            });
+        </script>
     </body>
 </html>

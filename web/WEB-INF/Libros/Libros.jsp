@@ -6,23 +6,20 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
+    
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="public/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-
-
-
         <link href="public/mdl/material.css" rel="stylesheet" type="text/css"/>
         <script src="public/mdl/material.js" type="text/javascript"></script>
-
-
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>
         <script>
             if (history.forward(1)) {
                 location.replace(history.forward(1))
             }
+
         </script>
         <title>JSP Page</title>
     </head>
@@ -31,6 +28,16 @@
             <header class="col-md-12">
                 <%@include file="../header2.jsp" %>
             </header>
+            <%
+            if (usuario.getNivel()!=2) {
+ 
+                //verifica que el usuario es administrador
+                    request.getRequestDispatcher("../index2.jsp").forward(request, response);
+                }
+            %>
+            <script>
+                
+            </script>
             <nav class="col-md-12">
                 <%@include file="../navbar.jsp" %>
             </nav>

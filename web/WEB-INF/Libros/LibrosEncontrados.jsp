@@ -15,6 +15,7 @@
         <link href="public/css/reset.css" rel="stylesheet" type="text/css"/>
         <link href="public/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>        
         <title>JSP Page</title>
     </head>
     <body>

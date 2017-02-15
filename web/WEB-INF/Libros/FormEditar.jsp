@@ -18,6 +18,7 @@
         <link href="public/mdl/material.css" rel="stylesheet" type="text/css"/>
         <script src="public/mdl/material.js" type="text/javascript"></script>
         <link href="public/css/styles.css" rel="stylesheet" type="text/css"/>
+        <script src="public/Jquery/jquery-3.1.1.js" type="text/javascript"></script>        
         <script>
             if (history.forward(1)) {
                 location.replace(history.forward(1))
