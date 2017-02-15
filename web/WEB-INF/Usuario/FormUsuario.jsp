@@ -37,6 +37,7 @@
                 <section class="col-10 main-content">
                     <h1>Nuevo Usuario</h1>
 
+
                     <form action="registrarUsuario" method="post">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label d-block">
                             <input class="mdl-textfield__input" name="mail" type="email" class="form-control">
@@ -55,6 +56,7 @@
                     </form>
                 </section>
             </div>
+
 
 
         </div>

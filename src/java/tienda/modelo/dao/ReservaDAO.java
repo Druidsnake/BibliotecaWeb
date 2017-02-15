@@ -6,6 +6,7 @@
 package tienda.modelo.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -186,21 +187,26 @@ public class ReservaDAO {
     
     //--------------------ultima reserva
     
-    public static String ultimaReserva(){
+    public static Date ultimaReserva(){
         
-        String fecha="";
+        //ArrayList<Reserva> fecha= new ArrayList<>();
+        Date ultima=null;
         String sql="select max(fecha_desde) from reservas";
         Connection cn= Conexion.abrir();
         try {
             PreparedStatement ps= cn.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-           fecha=rs.toString(); 
-            
+           if(rs.next()){
+            ultima=rs.getDate(1);           
+           } 
+           cn.close();
+           ps.close();
+           rs.close();
         } catch (SQLException ex) {
         }
         
         
-        return fecha;
+        return ultima;
     }
 
 }
