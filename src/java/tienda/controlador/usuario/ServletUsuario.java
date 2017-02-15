@@ -47,27 +47,21 @@ public class ServletUsuario extends HttpServlet {
             request.getRequestDispatcher("WEB-INF/Usuario/FormUsuario.jsp").forward(request, response);
         }
         if (path.equals("/registrarUsuario")) {
-            //objeto empleado
+            //objeto usuario
             Usuario usu = new Usuario();
-        //    int cod = Integer.parseInt(request.getParameter("txtcodigo"));
             String mail=request.getParameter("mail");
             String pass1=request.getParameter("pass1");
             String pass2=request.getParameter("pass2");
-            if (pass1==pass2) {
-                usu.setMail(request.getParameter("mail"));
-                usu.setPassword(request.getParameter("pass1"));
+            if (pass1.equals(pass2)) {
+                usu.setMail(mail);
+                usu.setPassword(pass1);
                 UsuarioDAO.insertar(usu);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             }
             else{
                 response.sendRedirect("Registrarse");
             }
-            //encapsular datros en el objeto emp
             
-
-
-
-            //request.getRequestDispatcher("WEB-INF/Empleado/Empleados.jsp").forward(request, response);
         }
         if (path.equals("/Login")) {
             //invocar a

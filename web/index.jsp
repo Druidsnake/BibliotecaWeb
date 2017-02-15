@@ -1,3 +1,5 @@
+<%@page import="tienda.modelo.bean.Libro"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,11 +30,13 @@
             </nav>
         </div>
         <div class="container">
+
             <div class="row">
                 <aside class="aside col-2">
                     <%@include file="WEB-INF/aside.jsp" %>
                 </aside>
                 <section class="col-10 main-content">
+
 
             </section>
 

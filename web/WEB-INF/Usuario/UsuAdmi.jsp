@@ -1,5 +1,12 @@
+
+
+
+<%@page import="java.sql.Date"%>
+<%@page import="tienda.modelo.bean.Reserva"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="tienda.modelo.bean.Empleado"%>
 <%@page import="tienda.modelo.bean.Usuario"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,14 +37,16 @@
             </nav>
         </div>
         <div class="container">
+
             <div class="row">
                 <aside class="aside2 col-2">
-                    <%@include file="aside2.jsp" %>
+                    <%@include file="../aside3.jsp" %>
                 </aside>
                 <section class="col-10 main-content">
 
                 </section>
             </div>
+
 
 
         </div>

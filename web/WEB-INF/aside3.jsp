@@ -12,7 +12,7 @@
     <body>
         
         <h1>aside</h1>
-        <a href="listarLibros_admi">Todos los libros</a>
+        <a href="listarLibros_admi">Todos los libros</a><br/>
         <a href="listarReservas_admi">Todas las reservas</a>
     </body>
 </html>
