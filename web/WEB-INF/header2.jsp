@@ -28,7 +28,8 @@
             <ul class="botones col-md-4">
                 <li><a href="#"><%=usuario.getNom1()%></a></li>
                 <li><a href="CerrarSesion">Cerrar Sesion</a></li>
-                <li id="admin" class="hidden"><a href="listarLibros">Administrar</a></li>
+                <li id="admin" class="hidden"><a href="ServletAdmi">Administrar</a></li>
+
             </ul>
             <ul class="sociales col-md-2">
                 <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>

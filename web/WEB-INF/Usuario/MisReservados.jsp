@@ -72,6 +72,21 @@
                         </tr>
                     </tbody>
 
+                    <tr>
+                        <td><%=num%></td>
+                        <td><%=x.getTitulo()%></td>
+                        <td><%=x.getAutor()%></td>
+                        <td><%=x.getIdreserva()%></td>
+                        <td><%=x.getIsbn()%></td>
+                        <td><%=x.getFecha_desde()%></td>
+                        <td><%=x.getFecha_hasta()%></td>
+
+                        <td><a href="eliminarReserva?idreserva=<%=x.getIdreserva()%>&usuario=<%=usuario.getMail()%>">Eliminar</a></td>
+
+
+
+
+                    </tr>
                     <% num=num+1;%>
                     <%}%>
             </table>
