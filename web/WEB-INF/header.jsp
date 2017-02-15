@@ -1,9 +1,3 @@
-<%--
-    Document   : header
-    Created on : 12/02/2017, 08:34:30 AM
-    Author     : ricar
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="tienda.modelo.bean.Usuario"%>
 <!DOCTYPE html>
@@ -20,7 +14,8 @@
     %>
     <body>
         <div class="container">
-            <a class="logo col-md-2" href="index.jsp">Logo</a>
+
+            <a class="logo col-md-2" href="index.jsp"><img src="<%=request.getContextPath()%>/imagen/ui/logo.png" width="100"></a>
             <div class="buscador col-md-4">
                 <form class="" action="obtenerLibros" method="post">
                     <input type="text" name="input_libro" value="" placeholder="Busca un libro">
@@ -34,9 +29,10 @@
 
             </ul>
             <ul class="sociales col-md-2">
-                <li><a href="#"></a>face</li>
-                <li><a href="#"></a>google</li>
-                <li><a href="#"></a>you</li>
+                <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
             </ul>
         </div>
 
